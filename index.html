@@ -8,21 +8,22 @@
   <title>Артём Бандин</title>
   <style>
     :root {
-      --bg: #f5efe6;
-      --text: #1f2937;
-      --muted: #6b7280;
+      --bg: #f5f5f4;
+      --text: #18181b;
+      --muted: #71717a;
       --accent: #0f766e;
-      --line: rgba(31,41,55,.12);
-      --link-bg: rgba(15,118,110,.10);
+      --line: rgba(24,24,27,.14);
+      --link-bg: rgba(15,118,110,.08);
+      --mono: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
       color-scheme: light;
     }
     :root[data-theme="dark"] {
-      --bg: #0f172a;
+      --bg: #0b1120;
       --text: #e5e7eb;
       --muted: #94a3b8;
-      --accent: #5eead4;
+      --accent: #6ee7d8;
       --line: rgba(226,232,240,.12);
-      --link-bg: rgba(94,234,212,.10);
+      --link-bg: rgba(110,231,216,.08);
       color-scheme: dark;
     }
     * { box-sizing: border-box; }
@@ -34,58 +35,49 @@
       line-height: 1.62;
       transition: background .2s ease, color .2s ease;
     }
-    .wrap { max-width: 900px; margin: 0 auto; padding: 32px 18px 64px; }
-    .topline { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom: 36px; }
-    .name { font-size: 1rem; font-weight: 700; letter-spacing: .02em; }
-    .hero { display:grid; grid-template-columns: 88px 1fr; gap: 18px; align-items: start; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 36px 18px 64px; }
+    .hero { display:grid; grid-template-columns: 72px 1fr; gap: 16px; align-items: start; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
     .avatar {
-      width: 88px; height: 88px; border-radius: 999px; object-fit: cover;
+      width: 72px; height: 72px; border-radius: 999px; object-fit: cover;
       border: 1px solid var(--line); display:block;
     }
     h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2.4rem, 7vw, 5rem);
-      line-height: .95;
-      letter-spacing: -.05em;
-      max-width: 10ch;
+      margin: 2px 0 0;
+      font-size: clamp(1.25rem, 3.4vw, 1.9rem);
+      line-height: 1.1;
+      letter-spacing: -.04em;
       font-weight: 700;
+      font-family: var(--mono);
     }
-    p { margin: 0 0 14px; max-width: 62ch; }
+    p { margin: 0 0 12px; max-width: 64ch; }
     .muted { color: var(--muted); }
-    .links { margin: 20px 0 34px; display:flex; flex-wrap:wrap; gap: 12px 16px; }
-    a { color: var(--accent); text-decoration: none; background: var(--link-bg); padding: 2px 8px; border-radius: 999px; }
-    a:hover { text-decoration: underline; }
-    .section { margin-top: 28px; }
-    .label { display:block; margin-bottom: 8px; color: var(--muted); font-size: .92rem; }
+    .intro { margin-top: 14px; }
+    .links { margin: 18px 0 30px; display:flex; flex-wrap:wrap; gap: 12px 16px; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+    a:hover { border-bottom-color: var(--accent); }
+    .section { margin-top: 26px; }
+    .label { display:block; margin-bottom: 8px; color: var(--muted); font-family: var(--mono); font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; }
     ul { margin: 0; padding-left: 18px; }
     li { margin: 10px 0; max-width: 68ch; }
-    .project { margin: 14px 0; }
-    .footer { margin-top: 40px; color: var(--muted); font-size: .92rem; }
-    .article-item {
-      display: flex; align-items: flex-start; gap: 10px;
-      margin: 12px 0;
-    }
-    .site-icon {
-      width: 18px; height: 18px; flex: 0 0 18px; margin-top: 3px;
-    }
+    .project { margin: 12px 0; }
+    .article-item { display: flex; align-items: flex-start; gap: 8px; margin: 10px 0; }
+    .site-icon { width: 16px; height: 16px; flex: 0 0 16px; margin-top: 4px; color: var(--muted); }
+    .footer { margin-top: 34px; color: var(--muted); font-size: .92rem; }
     @media (max-width: 700px) {
       .hero { grid-template-columns: 1fr; }
-      .avatar { width: 72px; height: 72px; }
+      .avatar { width: 64px; height: 64px; }
     }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <div class="topline">
-      <div class="name">Артём Бандин</div>
-    </div>
-
     <section class="hero">
       <img class="avatar" src="assets/profile-photo.svg" alt="Артём Бандин" />
       <div>
-        <h1>Код. Маркетинг. Медицина.</h1>
-        <p>Собираю понятные системы для клиник и продуктов.</p>
-        <p class="muted">Работаю на стыке аналитики, автоматизации, продукта и маркетинга. Люблю вещи, которые можно измерить, проверить и улучшить.</p>
+        <h1>Артём Бандин</h1>
+        <div class="intro">
+          <p class="muted">Работаю на стыке аналитики, автоматизации, продукта и маркетинга. Люблю вещи, которые можно измерить, проверить и улучшить.</p>
+        </div>
       </div>
     </section>
 
@@ -96,7 +88,7 @@
     </div>
 
     <div class="section">
-      <span class="label">Что делаю</span>
+      <span class="label">Сейчас</span>
       <ul>
         <li><b>Rang.ai</b> — автоматизация, аналитика, продуктовые эксперименты.</li>
         <li><b>Лёгкая стоматология</b> — маркетинг, BI, онлайн-запись, отзывы.</li>
@@ -105,16 +97,7 @@
     </div>
 
     <div class="section">
-      <span class="label">Что значимого сделал</span>
-      <ul>
-        <li>Собираю процессы, где маркетинг не оторван от цифр.</li>
-        <li>Делаю инструменты, которые снимают ручную рутину.</li>
-        <li>Пишу про AI, контекст, код, метрики и практику.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <span class="label">Избранные посты</span>
+      <span class="label">Посты</span>
       <div class="project"><a href="#">LLM и большой контекст</a> — почему нейронки полезны там, где человеку уже не хватает рабочей памяти.</div>
       <div class="project"><a href="#">Навык пробовать самому руками</a> — про привычку проверять новое самому, а не смотреть со стороны.</div>
       <div class="project"><a href="#">Размер контекста мозга человека</a> — про границы внимания и зачем тут LLM.</div>
