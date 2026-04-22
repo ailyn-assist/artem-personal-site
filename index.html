@@ -3,125 +3,151 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive" />
   <title>Артём Бандин</title>
-  <meta name="description" content="Артём Бандин. Предприниматель, CMO и техлид в медицине. Rang.ai, Лёгкая стоматология, AI, метрики, процессы и автоматизация." />
-  <meta property="og:title" content="Артём Бандин" />
-  <meta property="og:description" content="Код, маркетинг и медицина. Rang.ai, Лёгкая стоматология, AI, метрики и процессы." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og-cover.svg" />
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --bg: #f5efe6;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #0f766e;
+      --line: rgba(31,41,55,.12);
+      --link-bg: rgba(15,118,110,.10);
+      color-scheme: light;
+    }
+    :root[data-theme="dark"] {
+      --bg: #0f172a;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #5eead4;
+      --line: rgba(226,232,240,.12);
+      --link-bg: rgba(94,234,212,.10);
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.62;
+      transition: background .2s ease, color .2s ease;
+    }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 32px 18px 64px; }
+    .topline { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom: 36px; }
+    .name { font-size: 1rem; font-weight: 700; letter-spacing: .02em; }
+    .toggle {
+      appearance: none; border: 1px solid var(--line); background: transparent; color: var(--text);
+      border-radius: 999px; padding: 8px 12px; cursor: pointer; font: inherit;
+    }
+    .hero { display:grid; grid-template-columns: 180px 1fr; gap: 18px; align-items: start; }
+    .avatar {
+      width: 180px; height: 180px; border-radius: 24px; object-fit: cover;
+      border: 1px solid var(--line); display:block;
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      line-height: .95;
+      letter-spacing: -.05em;
+      max-width: 10ch;
+      font-weight: 700;
+    }
+    p { margin: 0 0 14px; max-width: 62ch; }
+    .muted { color: var(--muted); }
+    .links { margin: 20px 0 34px; display:flex; flex-wrap:wrap; gap: 12px 16px; }
+    a { color: var(--accent); text-decoration: none; background: var(--link-bg); padding: 2px 8px; border-radius: 999px; }
+    a:hover { text-decoration: underline; }
+    .section { margin-top: 28px; }
+    .label { display:block; margin-bottom: 8px; color: var(--muted); font-size: .92rem; }
+    ul { margin: 0; padding-left: 18px; }
+    li { margin: 10px 0; max-width: 68ch; }
+    .project { margin: 14px 0; }
+    .footer { margin-top: 40px; color: var(--muted); font-size: .92rem; }
+    @media (max-width: 700px) {
+      .hero { grid-template-columns: 1fr; }
+      .avatar { width: 140px; height: 140px; }
+    }
+  </style>
 </head>
 <body>
-  <main class="page">
-    <section class="hero card">
-      <div class="hero-copy">
-        <p class="eyebrow">Артём Бандин • Код. Маркетинг. Медицина.</p>
-        <h1>Строю понятные системы для клиник, команд и продуктов.</h1>
-        <p class="lead">Предприниматель, CMO и техлид в медицине. Делаю инженерный маркетинг: метрики, процессы, отзывы, SEO, AI и автоматизацию на опыте <strong>Rang.ai</strong> и <strong>Лёгкой стоматологии</strong>.</p>
-        <div class="chips">
-          <span>Rang.ai</span>
-          <span>Лёгкая стоматология</span>
-          <span>AI и автоматизация</span>
-          <span>BI и аналитика</span>
-        </div>
-        <div class="actions">
-          <a class="button primary" href="https://t.me/artbandin" target="_blank" rel="noreferrer">Написать в Telegram</a>
-          <a class="button secondary" href="#posts">Избранные тексты</a>
-        </div>
-      </div>
-      <div class="hero-photo">
-        <img src="assets/profile-photo.svg" alt="Фото Артёма Бандинa" />
-        <p class="photo-note">Слот под фото готов. Если появится исходник, достаточно заменить файл <code>assets/profile-photo.svg</code> или положить JPG с тем же именем в разметке.</p>
+  <main class="wrap">
+    <div class="topline">
+      <div class="name">Артём Бандин</div>
+      <button class="toggle" id="themeToggle" type="button">Тёмная тема</button>
+    </div>
+
+    <section class="hero">
+      <img class="avatar" src="assets/profile-photo.svg" alt="Артём Бандин" />
+      <div>
+        <h1>Код. Маркетинг. Медицина.</h1>
+        <p>Собираю понятные системы для клиник и продуктов.</p>
+        <p class="muted">Работаю на стыке аналитики, автоматизации, продукта и маркетинга. Люблю вещи, которые можно измерить, проверить и улучшить.</p>
       </div>
     </section>
 
-    <section class="grid two">
-      <article class="card">
-        <h2>Кто я</h2>
-        <ul>
-          <li>Основатель сервиса для гео-продвижения клиник <strong>Rang.ai</strong>.</li>
-          <li>Сооснователь сети <strong>Лёгкая стоматология</strong>.</li>
-          <li>Работаю на стыке маркетинга, разработки, аналитики и операционных процессов.</li>
-          <li>Люблю системы, которые можно измерить, улучшить и масштабировать.</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h2>Что делаю</h2>
-        <ul>
-          <li>Строю маркетинговые и продуктовые процессы для медицинских проектов.</li>
-          <li>Запускаю автоматизацию, AI-воркфлоу и внутренние инструменты для команд.</li>
-          <li>Пишу про контекст LLM, таск-менеджмент, командные процессы и реальные кейсы.</li>
-          <li>Смотрю на маркетинг как инженер: цифры важнее мнений.</li>
-        </ul>
-      </article>
-    </section>
+    <div class="links">
+      <a href="#">Telegram канал</a>
+      <a href="#">Избранные посты</a>
+      <a href="#">GitHub</a>
+    </div>
 
-    <section class="card">
-      <h2>Проекты и заметная работа</h2>
-      <div class="projects">
-        <article class="project">
-          <div>
-            <h3>Rang.ai</h3>
-            <p>Сервис для продвижения бизнеса в картах. Фокус на рейтингах, отзывах, локальном спросе и понятной аналитике.</p>
-          </div>
-          <img src="assets/rang-ai.png" alt="Скриншот Rang.ai" />
-        </article>
-        <article class="project text-only">
-          <div>
-            <h3>Лёгкая стоматология</h3>
-            <p>Сеть клиник в Москве. Маркетинг, BI, запись, клиентский путь, отзывы, операционные улучшения и культура изменений.</p>
-            <p class="muted">Из опубликованных заметок: 5 клиник, около 100 человек команды, внедрение инженерных практик в офлайн-бизнес.</p>
-          </div>
-        </article>
-        <article class="project text-only">
-          <div>
-            <h3>AI и внутренние инструменты</h3>
-            <p>OpenClaw, автоматические summary, напоминания, сборка данных к встречам, GitHub-дайджесты, счёта, рабочие навыки для ассистента.</p>
-          </div>
-        </article>
-      </div>
-    </section>
+    <div class="section">
+      <span class="label">Что делаю</span>
+      <ul>
+        <li>Rang.ai — автоматизация, аналитика, продуктовые эксперименты.</li>
+        <li>Лёгкая стоматология — маркетинг, BI, онлайн-запись, отзывы.</li>
+        <li>OpenClaw — скрипты, skills, workflows, напоминания, счета.</li>
+      </ul>
+    </div>
 
-    <section id="posts" class="card">
-      <h2>Избранные тексты</h2>
-      <div class="post-list">
-        <article>
-          <h3>LLM лучше всего там, где много контекста</h3>
-          <p>Короткий тезис о том, что сила LLM не в генерации текста, а в удержании рабочего контекста там, где человеку уже тесно.</p>
-        </article>
-        <article>
-          <h3>Перепробовал все таск-трекеры. Победил текстовый файл</h3>
-          <p>Личный рабочий подход: один markdown-файл вместо сложных статусов, с фокусом на ясность, артефакты и ежедневный ритм.</p>
-        </article>
-        <article>
-          <h3>Киберпанк с бормашиной: как мы внедрили Scrum в Лёгкую стоматологию</h3>
-          <p>История про то, как айтишные практики адаптируются к офлайн-команде и почему маленькие изменения важнее разовых подвигов.</p>
-        </article>
-        <article>
-          <h3>Бот-фейсконтрольщик</h3>
-          <p>Небольшой, но показательный кейс автоматизации: связка 1С, Telegram и процессов онбординга внутри команды.</p>
-        </article>
-      </div>
-    </section>
+    <div class="section">
+      <span class="label">Что значимого сделал</span>
+      <ul>
+        <li>Собираю процессы, где маркетинг не оторван от цифр.</li>
+        <li>Делаю инструменты, которые снимают ручную рутину.</li>
+        <li>Пишу про AI, контекст, код, метрики и практику.</li>
+      </ul>
+    </div>
 
-    <section class="grid two">
-      <article class="card">
-        <h2>Темы интереса</h2>
-        <div class="chips">
-          <span>доказательный маркетинг</span>
-          <span>медицина</span>
-          <span>SEO и отзывы</span>
-          <span>AI / ML</span>
-          <span>продуктовые процессы</span>
-          <span>операционные системы</span>
-        </div>
-      </article>
-      <article class="card">
-        <h2>Контакты</h2>
-        <p><a href="https://t.me/artbandin" target="_blank" rel="noreferrer">@artbandin</a></p>
-        <p class="muted">Если позже появятся GitHub, email, домен или ссылки на канал, их удобно добавить прямо в этот блок.</p>
-      </article>
-    </section>
+    <div class="section">
+      <span class="label">Избранные посты</span>
+      <div class="project"><a href="#">LLM и большой контекст</a> — почему нейронки полезны там, где человеку уже не хватает рабочей памяти.</div>
+      <div class="project"><a href="#">Навык пробовать самому руками</a> — про привычку проверять новое самому, а не смотреть со стороны.</div>
+      <div class="project"><a href="#">Размер контекста мозга человека</a> — про границы внимания и зачем тут LLM.</div>
+    </div>
+
+    <div class="section">
+      <span class="label">Контакты</span>
+      <p><a href="#">@artbandin</a> · <a href="#">bandin_nomagic</a></p>
+    </div>
+
+    <p class="footer">Личный сайт в git. Без лишнего дизайна. Без тяжёлой CMS.</p>
   </main>
+
+  <script>
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initial = saved || (systemDark ? 'dark' : 'light');
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        root.dataset.theme = 'dark';
+        btn.textContent = 'Светлая тема';
+      } else {
+        delete root.dataset.theme;
+        btn.textContent = 'Тёмная тема';
+      }
+      localStorage.setItem('theme', theme);
+    }
+
+    applyTheme(initial);
+    btn.addEventListener('click', () => {
+      applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+    });
+  </script>
 </body>
 </html>
